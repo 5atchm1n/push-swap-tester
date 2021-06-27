@@ -6,6 +6,7 @@ Runs test for some common errors ex : int overflow.
 Checks that your algorythm sorts all stack sizes from 1 to 100.
 
 Number are generated via this command.
+
 ``` ARG=`ruby -e "puts (0..99).to_a.shuffle.join(' ')"`; ```
 
 ### Performance checks
