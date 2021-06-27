@@ -81,7 +81,9 @@ echo -ne "${blue} Test : sorted list $reset"
 ./push_swap 1 2 3 4 5  >> test.out
 ./push_swap 1 2 3 4 5 6 7 >> test.out
 ./push_swap 1 2 3 4 5 6 7 8 9 >> test.out
+
 RES=`grep "Error\n" test.out`
+
 if [ $RES ]
 	then
 		echo "$red KO $reset"
@@ -89,7 +91,19 @@ if [ $RES ]
 		echo "$green OK ! $reset"
 fi
 
+echo -ne "${blue} Test 2: sorted list $reset"
+
+RES=`grep "OK\n" test.out`
+if [ $RES ]
+	then
+		echo "$red KO $reset"
+	else
+		echo "$green OK ! $reset"
+fi
 rm test.out
+
+# EMPTY ARGS
+
 echo -ne "${blue} Test : Empty args $reset"
 ./push_swap "" >> test.out 2>&1
 ./push_swap "" 1 2 3 >> test.out 2>&1
@@ -100,8 +114,10 @@ if [[ ! $RES ]]
 	else
 		echo "$green OK ! $reset"
 fi
-
 rm test.out
+
+# DUPLICATE ARGS
+
 echo -ne "${blue} Test : Empty Duplicated args $reset"
 ./push_swap "1" 1 2 3 >> test.out 2>&1
 RES=`grep "Error" test.out`
@@ -111,8 +127,10 @@ if [[ ! $RES ]]
 	else
 		echo "$green OK ! $reset"
 fi
-
 rm test.out
+
+# OVERFLOW
+
 echo -ne "${blue} Test : Overflow int $reset"
 ./push_swap -2147483649 >> test.out 2>&1
 ./push_swap 2147483648 >> test.out 2>&1
@@ -123,8 +141,10 @@ if [[ ! $RES ]]
 	else
 		echo "$green OK ! $reset"
 fi
-
 rm test.out
+
+# WHITESPACE
+
 echo -ne "${blue} Test : whitespace in arg $reset"
 ./push_swap " 1" 2 3 >> test.out 2>&1
 ./push_swap 42  "   43" >> test.out 2>&1
@@ -135,8 +155,10 @@ if [[ ! $RES ]]
 	else
 		echo "$green OK ! $reset"
 fi
-
 rm test.out
+
+# INVALID CHAR IN ARG
+
 echo -ne "${blue} Test : invalid char in arg $reset"
 ./push_swap 0 1 2 3 "--1" >> test.out 2>&1
 ./push_swap 0 1 2 3 "&" >> test.out 2>&1
@@ -148,10 +170,10 @@ if [[ ! $RES ]]
 	else
 		echo "$green OK ! $reset"
 fi
-
 rm test.out
 
 # CHECK ALL SIZES FROM 1 - 100
+
 NTESTS=100
 count=1
 avg=0
@@ -195,6 +217,9 @@ fi
 
 rm test.out
 echo ;
+
+# CHECK FOR STACK SIZE OF 3 -- WITH MOVE LIST
+
 NTESTS=5
 
 count=0
@@ -210,7 +235,8 @@ do
 	let "count += 1"
 done
 
-# SIZE 5
+# CHECK FOR STACK SIZE 5
+
 echo ;
 NTESTS=15
 count=1
