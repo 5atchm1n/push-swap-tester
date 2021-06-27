@@ -103,7 +103,7 @@ fi
 
 rm test.out
 echo -ne "${blue} Test : Empty Duplicated args $reset"
-./push_swap "1" 1 2 3 >> test.out
+./push_swap "1" 1 2 3 >> test.out 2>&1
 RES=`grep "Error" test.out`
 if [[ ! $RES ]]
 	then
@@ -114,8 +114,8 @@ fi
 
 rm test.out
 echo -ne "${blue} Test : Overflow int $reset"
-./push_swap -2147483649 >> test.out
-./push_swap 2147483648 >> test.out
+./push_swap -2147483649 >> test.out 2>&1
+./push_swap 2147483648 >> test.out 2>&1
 RES=`grep "Error" test.out`
 if [[ ! $RES ]]
 	then
@@ -126,8 +126,8 @@ fi
 
 rm test.out
 echo -ne "${blue} Test : whitespace in arg $reset"
-./push_swap " 1" 2 3 >> test.out
-./push_swap 42  "   43" >> test.out
+./push_swap " 1" 2 3 >> test.out 2>&1
+./push_swap 42  "   43" >> test.out 2>&1
 RES=`grep "Error" test.out`
 if [[ ! $RES ]]
 	then
@@ -138,8 +138,8 @@ fi
 
 rm test.out
 echo -ne "${blue} Test : invalid char in arg $reset"
-./push_swap 0 1 2 3 "--1" >> test.out
-./push_swap 0 1 2 3 "&" >> test.out
+./push_swap 0 1 2 3 "--1" >> test.out 2>&1
+./push_swap 0 1 2 3 "&" >> test.out 2>&1
 
 RES=`grep "Error" test.out`
 if [[ ! $RES ]]
