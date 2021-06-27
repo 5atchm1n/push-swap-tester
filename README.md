@@ -23,3 +23,5 @@ run ```./test.sh -D``` to get debug output (stack detail)
 
 run your own tests as well :smiley:
 Try to write your own shell scripts ❕
+
+PS - if anyone can tell me how to generate a randowm number $ARG using using shell commands i'd love a it - and give credit where credit is due.
