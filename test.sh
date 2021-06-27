@@ -91,8 +91,8 @@ fi
 
 rm test.out
 echo -ne "${blue} Test : Empty args $reset"
-./push_swap "" >> test.out
-./push_swap "" 1 2 3 >> test.out
+./push_swap "" >> test.out 2>&1
+./push_swap "" 1 2 3 >> test.out 2>&1
 RES=`grep "Error" test.out`
 if [[ ! $RES ]]
 	then
