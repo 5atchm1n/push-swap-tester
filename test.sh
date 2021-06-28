@@ -82,7 +82,7 @@ echo -ne "${blue} Test : sorted list $reset"
 ./push_swap 1 2 3 4 5 6 7 >> test.out
 ./push_swap 1 2 3 4 5 6 7 8 9 >> test.out
 
-RES=`grep "Error\n" test.out`
+RES=`grep "Error$" test.out`
 
 if [ $RES ]
 	then
@@ -93,7 +93,7 @@ fi
 
 echo -ne "${blue} Test 2: sorted list $reset"
 
-RES=`grep "OK\n" test.out`
+RES=`grep "OK$" test.out`
 if [ $RES ]
 	then
 		echo "$red KO $reset"
