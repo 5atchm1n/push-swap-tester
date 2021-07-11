@@ -118,7 +118,7 @@ rm test.out
 
 # DUPLICATE ARGS
 
-echo -ne "${blue} Test : Empty Duplicated args $reset"
+echo -ne "${blue} Test : Duplicated args $reset"
 ./push_swap "1" 1 2 3 2>> test.out
 RES=`grep -x "Error$" test.out`
 if [[ ! $RES ]]
