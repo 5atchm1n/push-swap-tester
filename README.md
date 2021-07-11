@@ -3,7 +3,7 @@
 
 Runs test for some common errors ex : int overflow.
 
-Checks that your algorythm sorts all stack sizes from 1 to 100.
+Checks that your algorithm sorts all stack sizes from 1 to 100.
 
 Number are generated via this command.
 
