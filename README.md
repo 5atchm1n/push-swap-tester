@@ -1,4 +1,7 @@
 # push-swap-tester
+
+## ⚠️ USE THIS TO TEST YOUR PROJECT -> NOT GRADE THEM !! ⚠️
+
 ### Tester for push swap
 
 Runs test for some common errors ex : int overflow.
