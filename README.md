@@ -1,6 +1,6 @@
 # push-swap-tester
 
-## USE THIS TO TEST YOUR PROJECT -> NOT GRADE THEM !! ⚠️
+## ⚠️ USE THIS TO TEST YOUR PROJECT -> NOT GRADE THEM !! ⚠️
 
 ### Tester for push swap
 
