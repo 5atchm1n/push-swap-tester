@@ -43,6 +43,7 @@ fi
 #
 
 UNAME=`uname`;
+TEMP=0
 
 if [[ "$UNAME" == "Linux" ]]
 	then
@@ -50,6 +51,8 @@ if [[ "$UNAME" == "Linux" ]]
 			then
 				curl https://projects.intra.42.fr/uploads/document/document/3876/checker_linux -o checker_linux > /dev/null
 				chmod 755 checker_linux
+			else
+				TEMP=1
 		fi
 		CHECKER=./checker_linux
 	else
@@ -57,6 +60,8 @@ if [[ "$UNAME" == "Linux" ]]
 			then
 				curl https://projects.intra.42.fr/uploads/document/document/3875/checker_Mac -o checker_Mac > /dev/null
 				chmod 755 checker_Mac
+			else
+				TEMP=1
 		fi
 		CHECKER=./checker_Mac
 fi
@@ -155,7 +160,7 @@ if [[ ! $RES ]]
 	else
 		echo "$green OK ! $reset"
 fi
-#rm test.out
+rm test.out
 
 # INVALID CHAR IN ARG
 
@@ -170,7 +175,7 @@ if [[ ! $RES ]]
 	else
 		echo "$green OK ! $reset"
 fi
-#rm test.out
+rm test.out
 
 # CHECK ALL SIZES FROM 1 - 100
 
@@ -360,6 +365,9 @@ if [ $RES ]
 		echo "checker => $green OK ! $reset"
 fi
 rm test.out
-rm $CHECKER
+if [ $TEMP = 0 ]
+	then
+		rm $CHECKER
+fi
 
 echo ;
