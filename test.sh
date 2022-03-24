@@ -49,7 +49,7 @@ if [[ "$UNAME" == "Linux" ]]
 	then
 		if [[ ! -f "./checker_linux" ]]
 			then
-				curl https://projects.intra.42.fr/uploads/document/document/4444/checker_linux -o checker_linux > /dev/null
+				curl https://projects.intra.42.fr/uploads/document/document/8387/checker_linux -o checker_linux > /dev/null
 				chmod 755 checker_linux
 			else
 				TEMP=1
@@ -58,7 +58,7 @@ if [[ "$UNAME" == "Linux" ]]
 	else
 		if [[ ! -f "./checker_Mac" ]]
 			then
-				curl https://projects.intra.42.fr/uploads/document/document/4443/checker_Mac -o checker_Mac > /dev/null
+				curl https://projects.intra.42.fr/uploads/document/document/8386/checker_Mac -o checker_Mac > /dev/null
 				chmod 755 checker_Mac
 			else
 				TEMP=1
